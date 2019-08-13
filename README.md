@@ -222,6 +222,7 @@ https://docs.lightstep.com/docs/webhook-configuration
 
 Here is how you should configure your new Destination Webhook:
 
+,,,
 **Name**: xMatters Alert
 
 **URL**:
@@ -233,6 +234,7 @@ For instructions on how to do this see:
 [Add URL Parameters to the Lightstep Destination Webhook](#add-url-parameters-to-the-lightstep-destination-webhook)
 
 **Headers**: none
+,,,
 
 <kbd>
     <img src="/media/destinations.png" width="600px">
@@ -256,7 +258,7 @@ https://docs.lightstep.com/docs/monitoring-and-alerting-in-lightstep#section-con
     <img src="/media/condition.png">
 </kbd>
 <br><br>
-Make sure to **Add Alerting Rule** and selecting the **xMatters (Desitination)** **Webhook** created in the last step.
+Make sure to __Add Alerting Rule__ and selecting the __xMatters (Desitination)__ __Webhook__ created in the last step.
 
 <kbd>
     <img src="/media/alert_rule.png">
@@ -278,7 +280,7 @@ You can use either one or both of these methods. You must use at least one metho
 1. In Lightstep, go to the stream you have configured conditions that will alert the xMatters Destination Webhook.
 
 <kbd>
-    <img src="/media/condition.png" width="100px">
+    <img src="/media/condition.png" width="650px">
 </kbd>
 <br><br>
 
@@ -315,32 +317,32 @@ This will help you customize the target xMatters groups / users from the Destina
 
 **Examples**:
 
-\*Target a single group
-**&recipients=Database**
+- Target a single group<br>
+  **&recipients=Database**
 
-\*Target a single user
-**&recipients=jsmith**
+- Target a single user<br>
+  **&recipients=jsmith**
 
-\*Target a group and a user. Notice each value is comma separated.
-**&recipients=Database,jsmith**
+- Target a group and a user. Notice each value is comma separated.<br>
+  **&recipients=Database,jsmith**
 
-\*To target a recipient with a space in the name, you must URL encode the space.
-
-**%20** is the url encoded value for a space. If you have other special characters they could cause a problem and should be encoded. Here is a character encoded to assist you
-https://meyerweb.com/eric/tools/dencoder/
+- To target a recipient with a space in the name, you must URL encode the space.<br>
+  **%20** is the url encoded value for a space. If you have other special characters they could cause a problem and should be encoded. Here is a character encoded to assist you
+  https://meyerweb.com/eric/tools/dencoder/
 
 **&recipients=Cloud%20Devops**
 
-**Full Example**:
+**Full Example**:<br>
 https://company.cs1.xmatters.com/api/integration/1/functions/769bc32d-07bc-4a720/triggers?apiKey=b6d5-3f1bd65ae91d&recipients=Cloud%20Devops
 
-Make sure to include the **&** before recipient or any other parameter you decide to add.
+**Other Notes**:<br>
 
-If you want to add additional parameters, you can do so by adding **&parameter=value**
+- Make sure to include the **&** before recipient or any other parameter you decide to add.
 
-This is an easy way to add parameters like severity so xMatters can take different workflows for different values.
+- If you want to add additional parameters, you can do so by adding **&parameter=value**<br>
+  This is an easy way to add parameters like severity so xMatters can take different workflows for different values.
 
-If you add additional parameters you will need to also follow instructions here [Customize **Lightstep Flow Trigger** Step](customize-lightstep-flowtrigger-step)
+- If you add additional parameters you will need to also follow instructions here [Customize **Lightstep Flow Trigger** Step](customize-lightstep-flowtrigger-step)
 
 # Troubleshooting
 
