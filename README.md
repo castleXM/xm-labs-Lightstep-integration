@@ -8,7 +8,7 @@ Trigger an xMatters Flow to alert xMatters groups and easily integrate with othe
 
 # Pre-Requisites
 
-- Lightstep [https://lightstep.com]((https://lightstep.com)
+- Lightstep [https://lightstep.com](https://lightstep.com)
 - xMatters account - If you don't have one, [get one](https://www.xmatters.com)!
 
 # Files
@@ -87,12 +87,14 @@ To import the communication plan:
 <kbd>
     <img src="/media/access_flow.png">
 </kbd>
+<br><br>
 
 3. On the Flow Canvas, Double Click on the step named **Lightstep Flow Trigger**. This is the inbound http trigger for the Flow.
 
 <kbd>
     <img src="/media/trigger_step.png">
 </kbd>
+<br><br>
 
 4. Change the _Authenticating User_ to the **Lightstep_API_User**
 
@@ -112,7 +114,7 @@ You will need this URL for configuring Lightstep.
 
 By default, this integration will create an xMatters Alert with basic property values from Lightstep. You can customize this integration to include more properties and also add additional Flow Steps to post to chat ops tools, create tickets or anything else you can dream of.
 
-**Note:**:If you customize the flow, just make sure that you do not remove the **xMatters Create Event (Lightstep Alert)** Step. This step creates the actual xMatters alert. This step can come right after Create Lightstep Alert Step or after other steps that you add to the canvas, it's up to you.
+**Note**:If you customize the flow, just make sure that you do not remove the **xMatters Create Event (Lightstep Alert)** Step. This step creates the actual xMatters alert. This step can come right after Create Lightstep Alert Step or after other steps that you add to the canvas, it's up to you.
 
 _Here is an example of a possible Flow:_
 <kbd>
@@ -215,7 +217,7 @@ Once you have added new properties to the Lightstep Alert form, they will become
 
 ## Create a New Destination
 
-Follow instructions here to create new Destination (Webhook):
+Follow instructions here to create new Destination (Webhook):<br>
 https://docs.lightstep.com/docs/webhook-configuration
 
 Here is how you should configure your new Destination Webhook:
@@ -233,25 +235,27 @@ For instructions on how to do this see:
 **Headers**: none
 
 <kbd>
-    <img src="/media/destinations.png">
+    <img src="/media/destinations.png" width="600px">
 </kbd>
+<br>
 <kbd>
     <img src="/media/webhook.png">
 </kbd>
+<br>
 <kbd>
-    <img src="/media/create_destination.png">
+    <img src="/media/create_destination.png" width="250px">
 </kbd>
 <br><br>
 
 ## Create New Condition
 
-Follow instructions here to create new Alert Rule:
+Follow instructions here to create new Alert Rule:<br>
 https://docs.lightstep.com/docs/monitoring-and-alerting-in-lightstep#section-conditions
 
 <kbd>
     <img src="/media/condition.png">
 </kbd>
-
+<br><br>
 Make sure to **Add Alerting Rule** and selecting the **xMatters (Desitination)** **Webhook** created created in the last step.
 
 <kbd>
@@ -274,11 +278,11 @@ You can use either one or both of these methods. You must use at least one metho
 1. In Lightstep, go to the stream you have configured conditions that will alert the xMatters Destination Webhook.
 
 <kbd>
-    <img src="/media/conditions.png" width="100px">
+    <img src="/media/condition.png" width="100px">
 </kbd>
 <br><br>
 
-2. Click Custom Data botton.
+2. Click **Custom Data** button.
 
 <kbd>
     <img src="/media/custom_data.png" width="100px">
@@ -294,7 +298,8 @@ You can use either one or both of these methods. You must use at least one metho
 </kbd>
 <br><br>
 
-For more information on adding custom data go here: [https://docs.lightstep.com/docs/custom-data-on-saved-searches](https://docs.lightstep.com/docs/custom-data-on-saved-searches)
+For more information on adding custom data go here: <br>
+[https://docs.lightstep.com/docs/custom-data-on-saved-searches](https://docs.lightstep.com/docs/custom-data-on-saved-searches)
 
 ### Add URL Parameters to the Lightstep Destination Webhook.
 
@@ -310,16 +315,21 @@ This will help you customize the target xMatters groups / users from the Destina
 
 **Examples**:
 
-_&recipients=Database // Target a single group
-_&recipients=jsmith // Target a single user
-\_&recipients=Database,jsmith // Target a group and a user. Notice each value is comma seperated.
+\*Target a single group
+**&recipients=Database**
 
-// To target a recipient with a space in the name, you must URL encode the space.
+\*Target a single user
+**&recipients=jsmith**
+
+\*Target a group and a user. Notice each value is comma seperated.
+**&recipients=Database,jsmith**
+
+\*To target a recipient with a space in the name, you must URL encode the space.
 
 **%20** is the url encoded value for a space. If you have other special characters they could cause a problem and should be encoded. Here is a character encoded to assist you
 https://meyerweb.com/eric/tools/dencoder/
 
-\_&recipients=Cloud%20Devops
+**&recipients=Cloud%20Devops**
 
 **Full Example**:
 https://company.cs1.xmatters.com/api/integration/1/functions/769bc32d-07bc-4a720/triggers?apiKey=b6d5-3f1bd65ae91d&recipients=Cloud%20Devops
