@@ -222,7 +222,7 @@ https://docs.lightstep.com/docs/webhook-configuration
 
 Here is how you should configure your new Destination Webhook:
 
-,,,
+'''
 **Name**: xMatters Alert
 
 **URL**:
@@ -234,7 +234,7 @@ For instructions on how to do this see:
 [Add URL Parameters to the Lightstep Destination Webhook](#add-url-parameters-to-the-lightstep-destination-webhook)
 
 **Headers**: none
-,,,
+'''
 
 <kbd>
     <img src="/media/destinations.png" width="600px">
@@ -317,22 +317,24 @@ This will help you customize the target xMatters groups / users from the Destina
 
 **Examples**:
 
-- Target a single group<br>
-  **&recipients=Database**
+- **Target a single group**<br>
+  _&recipients=Database_
 
-- Target a single user<br>
-  **&recipients=jsmith**
+- **Target a single user**<br>
+  _&recipients=jsmith_
 
-- Target a group and a user. Notice each value is comma separated.<br>
-  **&recipients=Database,jsmith**
+- **Target a group and a user.** Notice each value is comma separated.<br>
+  _&recipients=Database,jsmith_
 
-- To target a recipient with a space in the name, you must URL encode the space.<br>
-  **%20** is the url encoded value for a space. If you have other special characters they could cause a problem and should be encoded. Here is a character encoded to assist you
+- **To target a recipient with a space in the name.** You must URL encode the space.<br>
+  _&recipients=Cloud**%20**Devops_
+
+  _%20_ is the url encoded value for a space. If you have other special characters, they could cause a problem and should be encoded.
+
+  Here is a character encoded to assist you:
   https://meyerweb.com/eric/tools/dencoder/
 
-**&recipients=Cloud%20Devops**
-
-**Full Example**:<br>
+**Full Example URL**:<br>
 https://company.cs1.xmatters.com/api/integration/1/functions/769bc32d-07bc-4a720/triggers?apiKey=b6d5-3f1bd65ae91d&recipients=Cloud%20Devops
 
 **Other Notes**:<br>
