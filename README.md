@@ -98,7 +98,7 @@ To import the communication plan:
 
 4. Change the _Authenticating User_ to the **Lightstep_API_User**
 
-You must supervise this user and it must have a Web Service User Role. If you cannot select the **Lightstep_API_User** if it because you do not supervise that user or they do not have the REST Web Service User role. When you create a new user you are automatically set as that users supervisor. If you do not see the user that you created, most likely the REST Web Service role is missing.
+You must supervise this user and it must have a Web Service User Role. If you cannot select the **Lightstep_API_User** it is because you do not supervise that user or they do not have the REST Web Service User role. When you create a new user, you are automatically set as that users' supervisor. If you do not see the user that you created, most likely the REST Web Service role is missing.
 
 5. Copy the URL listed under the **Trigger** section.
 
@@ -130,7 +130,7 @@ _Here is an example of a possible Flow:_
 </kbd>
 <br><br>
 
-2. Go to the **OUTPUTS** Tab and add new **Step Outputs**. Outputs are values that will be available for subsiquent steps.
+2. Go to the **OUTPUTS** Tab and add new **Step Outputs**. Outputs are values that will be available for subsequent steps.
 
 <kbd>
     <img src="/media/create_outputs.png" width="550px">
@@ -138,7 +138,7 @@ _Here is an example of a possible Flow:_
 <br><br>
 
 **Note:** The Lightstep webhook format is predefined and most values are already part of this integration with the exception of **custom-data**. Custom Data can be defined in Lightstep for each notification stream.
-This is already designed into the integraiton for the parameter **group**. This is how you determine the proper xMatters group to send an alert to when the integration is triggered.
+This is already designed into the integration for the parameter **group**. This is how you determine the proper xMatters group to send an alert to when the integration is triggered.
 
 For more information go here: https://docs.lightstep.com/docs/custom-data-on-saved-searches
 
@@ -256,7 +256,7 @@ https://docs.lightstep.com/docs/monitoring-and-alerting-in-lightstep#section-con
     <img src="/media/condition.png">
 </kbd>
 <br><br>
-Make sure to **Add Alerting Rule** and selecting the **xMatters (Desitination)** **Webhook** created created in the last step.
+Make sure to **Add Alerting Rule** and selecting the **xMatters (Desitination)** **Webhook** created in the last step.
 
 <kbd>
     <img src="/media/alert_rule.png">
@@ -271,7 +271,7 @@ There are two ways to target xMatters Users and Groups from this integration.
 1. Set Custom Data on your Lightstep Stream.
 2. Add URL Parameters to the Lightstep Destination Webhook.
 
-You can use either one or both of these methods. You must use at least one method or your integration will not target anyone and will fail.
+You can use either one or both of these methods. You must use at least one method, or your integration will not target anyone and will fail.
 
 ### Set Custom Data on your Lightstep Stream.
 
@@ -291,7 +291,7 @@ You can use either one or both of these methods. You must use at least one metho
 
 3. Add Custom Data with Key Name **"Group"**.
 
-4. Set **Group** key to the name of the xMatters group or user you want to notify. You can add multiple groups / users by seperating with a comma.
+4. Set **Group** key to the name of the xMatters group or user you want to notify. You can add multiple groups / users by separating with a comma.
 
 <kbd>
     <img src="/media/set_custom_data.png" width="250px">
@@ -307,10 +307,10 @@ You can specify recipients and other parameters by adding url parameters at the 
 
 This integration is specifically configured to look for a url parameter **"recipients"** and add specified recipients to the xMatters alert.
 
-This will help you customize the target xMatters groups / users from the Destination URL and make targeting appropriate people easier. You could create multiple destination urls targeting different groups / users in xMatter.
+This will help you customize the target xMatters groups / users from the Destination URL and make targeting appropriate people easier. You could create multiple destination url's targeting different groups / users in xMatters.
 
 - You can specify xMatters **Groups** as well as **Users**.
-- Sepcify more than one by seperating with a comma.
+- Specify more than one by separating with a comma.
 - Add the recipients url parameter to the end of the inbound integration url.
 
 **Examples**:
@@ -321,7 +321,7 @@ This will help you customize the target xMatters groups / users from the Destina
 \*Target a single user
 **&recipients=jsmith**
 
-\*Target a group and a user. Notice each value is comma seperated.
+\*Target a group and a user. Notice each value is comma separated.
 **&recipients=Database,jsmith**
 
 \*To target a recipient with a space in the name, you must URL encode the space.
@@ -336,9 +336,9 @@ https://company.cs1.xmatters.com/api/integration/1/functions/769bc32d-07bc-4a720
 
 Make sure to include the **&** before recipient or any other parameter you decide to add.
 
-If you want to add additional parameters you can do so by adding **&parameter=value**
+If you want to add additional parameters, you can do so by adding **&parameter=value**
 
-This is an easy way to add parametes like severity so xMatters can take different workflows for different values.
+This is an easy way to add parameters like severity so xMatters can take different workflows for different values.
 
 If you add additional parameters you will need to also follow instructions here [Customize **Lightstep Flow Trigger** Step](customize-lightstep-flowtrigger-step)
 
