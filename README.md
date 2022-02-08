@@ -6,6 +6,12 @@ Trigger an xMatters Flow to alert xMatters groups and easily integrate with othe
   <img src="https://github.com/xmatters/xMatters-Labs/raw/master/media/disclaimer.png">
 </kbd>
 
+-------
+
+An updated version of this integration is available. You can install the new version right from the Workflow Templates directory within your xMatters instance. [Learn more](http://help.xmatters.com/integrations/#cshid=Lightstep).
+
+-------
+
 # Pre-Requisites
 
 - Lightstep [https://lightstep.com](https://lightstep.com)
